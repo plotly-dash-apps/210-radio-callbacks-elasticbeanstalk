@@ -49,11 +49,10 @@ application.layout = html.Div(children=[
 @application.callback(Output('your_output_here', 'children'),
               [Input('your_input_here', 'value')])
 def radio_results(image_you_chose):
-    
-    
-    return html.Img(src=app.get_asset_url(image_you_chose), style={'width': 'auto', 'height': '50%'}),
+
+    return html.Img(src=dash.get_asset_url(image_you_chose), style={'width': 'auto', 'height': '50%'}),
 
 
 ############ Deploy
 if __name__ == '__main__':
-    application.run_server(debug=True)
+    application.run(debug=True, port=8080)
