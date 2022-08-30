@@ -18,13 +18,13 @@ githublink = 'https://github.com/plotly-dash-apps/203-radio-callbacks'
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-application = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-server = application.server
-application.title=tabtitle
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
+app.title=tabtitle
 
 ########### Set up the layout
 
-application.layout = html.Div(children=[
+app.layout = html.Div(children=[
     html.H1(myheading1),
     dcc.RadioItems(
         id='your_input_here',
@@ -46,7 +46,7 @@ application.layout = html.Div(children=[
 
 
 ########## Define Callback
-@application.callback(Output('your_output_here', 'children'),
+@app.callback(Output('your_output_here', 'children'),
               [Input('your_input_here', 'value')])
 def radio_results(image_you_chose):
 
@@ -55,4 +55,4 @@ def radio_results(image_you_chose):
 
 ############ Deploy
 if __name__ == '__main__':
-    application.run_server(debug=True)
+    application.run(debug=True, port=8080)
