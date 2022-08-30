@@ -55,4 +55,4 @@ def radio_results(image_you_chose):
 
 ############ Deploy
 if __name__ == '__main__':
-    application.run(debug=True, port=8080)
+    application.run_server(debug=True)
