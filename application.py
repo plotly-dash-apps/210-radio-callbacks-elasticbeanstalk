@@ -19,7 +19,7 @@ githublink = 'https://github.com/plotly-dash-apps/203-radio-callbacks'
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-server = app.server
+application = app.server
 app.title=tabtitle
 
 ########### Set up the layout
