@@ -24,7 +24,7 @@ application.title=tabtitle
 
 ########### Set up the layout
 
-app.layout = html.Div(children=[
+application.layout = html.Div(children=[
     html.H1(myheading1),
     dcc.RadioItems(
         id='your_input_here',
@@ -46,7 +46,7 @@ app.layout = html.Div(children=[
 
 
 ########## Define Callback
-@app.callback(Output('your_output_here', 'children'),
+@application.callback(Output('your_output_here', 'children'),
               [Input('your_input_here', 'value')])
 def radio_results(image_you_chose):
     
